@@ -48,6 +48,9 @@ module Diffbot
       "http://www.diffbot.com/api/article"
     end
 
+    # Public: Diffbot content type
+    property :type
+
     # Public: URL of the article.
     property :url
 

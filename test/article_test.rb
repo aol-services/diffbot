@@ -1,4 +1,4 @@
-require "test_helper"
+require_relative "test_helper"
 require "uri"
 
 describe Diffbot::Article do
@@ -7,7 +7,7 @@ describe Diffbot::Article do
       path = URI.parse(Diffbot::Article.endpoint).path
 
       Excon.stub(method: :get, path: path) do |params|
-        body = { title: "The Title" }
+        body = { title: "The Title", type: 'Article' }
         body[:tags] = %w(tag1 tag2) if params[:query]["tags"]
         body = Yajl::Encoder.encode(body)
 
