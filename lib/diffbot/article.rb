@@ -54,6 +54,9 @@ module Diffbot
     # Public: URL of the article.
     property :url
 
+    # Public: Resolved URL of the article.
+    property :resolved_url
+
     # Public: Title of the article.
     property :title
 
