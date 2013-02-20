@@ -48,6 +48,9 @@ module Diffbot
       "http://www.diffbot.com/api/article"
     end
 
+    # Public: Caption
+    property :caption
+
     # Public: Diffbot content type
     property :type
 
@@ -70,6 +73,7 @@ module Diffbot
     property :date
 
     class MediaItem < Hashie::Trash
+      property :caption
       property :type
       property :link
       property :primary, default: false
