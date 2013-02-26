@@ -8,14 +8,14 @@ class Diffbot::Frontpage::DmlParser
   #
   # Returns a Hash.
   def self.parse(dml)
-    node = Nokogiri(dml).root
+    node = Nokogiri::XML(dml).root
     parser = new(node)
     parser.parse
   end
 
   # Initialize the parser with a DML node.
   #
-  # dml - The root XML::Element 
+  # dml - The root XML::Element
   def initialize(node)
     @dml = node
   end
@@ -53,7 +53,7 @@ class Diffbot::Frontpage::DmlParser
   # the frontpage API.
   class ItemParser
     def self.parse(node)
-      node = Nokogiri(node)
+      node = Nokogiri::XML(node)
     end
 
     # The root element of each item.
